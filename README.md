@@ -6,8 +6,12 @@
 ``` bash
 cd /path/to/catkin_ws/src
 git clone https://github.com/furushchev/simple-pick-and-place-planning
-wstool merge simple-pick-and-place-planning/xdot.rosinstall # bugfix for smach_viewer
+
+# bugfix for smach_viewer
+# ref: https://github.com/jbohren/xdot/pull/14
+wstool merge simple-pick-and-place-planning/xdot.rosinstall
 wstool up xdot
+
 rosdep install --from-paths . --ignore-src -r -n -y
 cd ../
 catkin_make # or catkin build
