@@ -1,0 +1,4 @@
+- git:
+    local-name: xdot
+    uri: https://github.com/k-okada/xdot
+    version: revert_import

@@ -58,11 +58,17 @@
 ;; declare defined-failure nodes
 (setq *failed-nodes* nil);;(list 'push-button 'look))
 
+;; solve plan and make transition graph
 (require :pddl-result-graph "package://pddl_planner/src/pddl-result-graph.l")
 (setq *graph*
       (pddl-plan-to-graph nil :domain *domain* :problem *problem* :failed-nodes *failed-nodes* :debug t))
-(send *graph* :write-to-pdf "/tmp/graph.pdf" nil "simple_failure_torelant")
-(piped-fork "gnome-open /tmp/graph.pdf")
+
+;; show graph
+(when (ros::get-param "~display_graph" t)
+  (send *graph* :write-to-pdf "/tmp/graph.pdf" nil "simple_failure_torelant")
+  (piped-fork "gnome-open /tmp/graph.pdf"))
+
+;; convert into SMACH
 (require :pddl2smach "package://roseus_smach/src/pddl2smach.l")
 (require :state-machine-ros "package://roseus_smach/src/state-machine-ros.l")
 

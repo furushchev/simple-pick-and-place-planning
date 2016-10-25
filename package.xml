@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package>
+  <name>simple_pick_and_place_planning</name>
+  <version>0.0.0</version>
+  <description>The simple_pick_and_place_planning package</description>
+
+  <maintainer email="furushchev@jsk.imi.i.u-tokyo.ac.jp">Yuki Furuta</maintainer>
+  <license>BSD</license>
+  <author email="furushchev@jsk.imi.i.u-tokyo.ac.jp">Yuki Furuta</author>
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>roseus</run_depend>
+  <run_depend>pddl_planner</run_depend>
+  <run_depend>smach_viewer</run_depend>
+
+  <export>
+  </export>
+</package>
